@@ -1,0 +1,110 @@
+.sale {
+  background: linear-gradient(80.46deg, #87933d -0.68%, #55610b 66.66%);
+  border-radius: var(--radius-big);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px 32px 0;
+  margin-bottom: 110px;
+
+  h2 {
+    text-align: center;
+    font-size: clamp(40px, 4.5vw, 64px);
+    color: white;
+    font-weight: 700;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) minmax(280px, 1fr);
+    gap: 32px;
+    align-items: center;
+  }
+
+  &__image {
+    height: clamp(232px, 40vw, 388px);
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__form {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px 16px 0;
+
+    &__content {
+      grid-template-columns: 1fr;
+    }
+
+    &__image {
+      order: 2;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 10px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    padding: 16px 32px;
+    border: 1px solid white;
+    border-radius: var(--radius-small);
+    background: transparent;
+    font-size: clamp(18px, 2.5vw, 20px);
+    font-weight: 400;
+    color: white;
+
+    &::placeholder {
+      color: white;
+    }
+  }
+
+  &__error-message,
+  &__success-message {
+    font-size: clamp(14px, 2vw, 16px);
+    font-weight: 500;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: white;
+  }
+
+  &__button {
+    margin-top: 16px;
+
+    .button {
+      width: 100%;
+      padding: clamp(12px, 3vw, 16px) clamp(20px, 6vw, 32px);
+      border: none;
+      background: #fffff1;
+      border-radius: var(--radius-small);
+      font-size: clamp(18px, 2.5vw, 20px);
+      font-weight: 600;
+      color: #424436;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        background: #424436;
+        color: #fffff1;
+      }
+
+      &--submitted {
+        background: var(--light-grey);
+        color: #92a134;
+      }
+    }
+  }
+}

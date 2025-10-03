@@ -1,6 +1,7 @@
 // frontend/src/App.jsx
 import React from "react";
 import { Route, Routes } from 'react-router-dom'
+import HomePage from '@pages/HomePage/HomePage'
 import Layout from '@components/Layout/Layout'
 import ScrollToTop from '@components/ScrollToTop/ScrollToTop'
 
@@ -15,7 +16,7 @@ export default function App() {
 
       <Routes>
         <Route path='/' element={<Layout />}>
-        <Route path='/about' element={<div style={{height: "100000px"}}>About Page</div>} />
+          <Route index element={<HomePage />} />
         </Route>
       </Routes>
     </>
