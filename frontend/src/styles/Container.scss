@@ -1,27 +1,27 @@
-/* 📦 КОЛЛЕГИ, - это общий контейнер для всего проекта */
-/* Используется во всех компонентах (Header, Categories, List, Footer) */
-/* Чтобы у всех была одинаковая ширина и отступы */
+// /* 📦 КОЛЛЕГИ, - это общий контейнер для всего проекта */
+// /* Используется во всех компонентах (Header, Categories, List, Footer) */
+// /* Чтобы у всех была одинаковая ширина и отступы */
 
-@import './tokens.scss';
+// @import './tokens.scss';
 
 
-.container {
-    max-width: $container-max;
-    margin: 0 auto;
-    padding: 0 $padding-x;
-    box-sizing: border-box;
-}
+// .container {
+//     max-width: $container-max;
+//     margin: 0 auto;
+//     padding: 0 $padding-x;
+//     box-sizing: border-box;
+// }
 
-.inner {
-    max-width: $inner-max;
-    margin: 0 auto;
-    width: 100%;
-}
+// .inner {
+//     max-width: $inner-max;
+//     margin: 0 auto;
+//     width: 100%;
+// }
 
-/* 📝 И вот его правильное применение :
-  <div className="container">
-    <div className="inner">
-      // здесь лежит контент конкретного компонента
-    </div>
-  </div>
-*/
+// /* 📝 И вот его правильное применение :
+//   <div className="container">
+//     <div className="inner">
+//       // здесь лежит контент конкретного компонента
+//     </div>
+//   </div>
+// */

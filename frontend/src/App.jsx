@@ -10,8 +10,12 @@ export default function App() {
       <h1>Hello Garden-shop!</h1>
       
       <ScrollToTop />
+
+      
+
       <Routes>
         <Route path='/' element={<Layout />}>
+        <Route path='/about' element={<div style={{height: "100000px"}}>About Page</div>} />
         </Route>
       </Routes>
     </>
