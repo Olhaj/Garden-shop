@@ -1,16 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import { Provider } from 'react-redux'
-import { BrowserRouter } from 'react-router-dom'
-import './index.scss'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.scss";
+import { ThemeProvider } from "./context/ThemeRovider.jsx";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-	<React.StrictMode>
-		<Provider>
-			<BrowserRouter>
-				<App />
-			</BrowserRouter>
-		</Provider>
-	</React.StrictMode>
-)
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>
+);

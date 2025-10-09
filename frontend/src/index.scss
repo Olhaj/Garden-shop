@@ -14,12 +14,19 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  color: #2b2b2b;
-  background: #ffffff; 
+  color: #2b2b2b; 
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+body.light{
+  background-color: #FFFFF1;
+}
+
+body.dark{
+  background-color: #464436;
 }
