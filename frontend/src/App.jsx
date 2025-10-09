@@ -8,8 +8,6 @@ import ScrollToTop from "@components/ScrollToTop/ScrollToTop";
 export default function App() {
   return (
     <>
-      <h1>Hello Garden-shop!</h1>
-
       <ScrollToTop />
 
       <Routes>
