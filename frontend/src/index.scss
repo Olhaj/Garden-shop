@@ -1,28 +1,3 @@
-// * Подключаем шрифт Montserrat для всего проекта */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
-
-/* Сброс стилей для всех элементов */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* Основные стили для body */
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #2b2b2b; 
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
 body.light{
   background-color: #FFFFF1;
 }
