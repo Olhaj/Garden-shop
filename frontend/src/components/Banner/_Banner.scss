@@ -1,0 +1,40 @@
+.hero {
+    justify-content: space-between;
+    background-position: center;
+    background-size: cover;
+    background-image: url("/public/images/images_header/hero.jpg");
+    padding: 5rem 2.5rem 13.125rem;
+    margin-bottom: 2rem;
+
+    .hero_text {
+        font-weight: 700;
+        font-size: clamp(3rem, 1vw + 0.5rem, 6rem);
+
+        body.light & {
+            color: #ffffff;
+        }
+
+        body.dark & {
+            color: #ffffff;
+        }
+    }
+
+    &_btn {
+        margin-top: 2.5rem;
+        background-color: #92a134;
+        color: #ffffff;
+        padding: 1rem 3.5rem;
+        border: none;
+        border-radius: 0.313rem;
+        cursor: pointer;
+        font-weight: 600;
+        font-style: SemiBold;
+        font-size: 1.25rem;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
