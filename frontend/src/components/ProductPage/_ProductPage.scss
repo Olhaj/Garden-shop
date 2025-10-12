@@ -1,0 +1,282 @@
+.product-page {
+    padding: 20px;
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+
+    .title-desktop {
+        display: block;
+
+        @media (max-width: 480px) {
+            display: none;
+        }
+    }
+
+    .title-mobile {
+        display: none;
+
+        @media (max-width: 480px) {
+            display: block;
+        }
+
+        .icon.heart {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+
+            svg {
+                width: 24px;
+                height: 24px;
+                stroke: #444;
+                fill: none;
+                transition: all 0.2s ease;
+            }
+
+            &:hover {
+                border-color: #bbb;
+                background: #f8f8f8;
+
+                svg {
+                    stroke: #92a134;
+                    fill: #92a134;
+                }
+            }
+        }
+    }
+
+    // ---- фото товару ----
+    .image-wrapper {
+        position: relative;
+        max-width: 500px;
+
+        img {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+        }
+    }
+
+    // ---- інформація про товар ----
+    .info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            max-width: 90%;
+
+            @media (max-width: 480px) {
+                font-size: 28px;
+            }
+        }
+
+        // сердечко в правому верхньому куті
+        .icon.heart {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+
+            svg {
+                width: 24px;
+                height: 24px;
+                stroke: #444;
+                fill: none;
+                transition: all 0.2s ease;
+            }
+
+            &:hover {
+                border-color: #bbb;
+                background: #f8f8f8;
+
+                svg {
+                    stroke: #92a134;
+                    fill: #92a134;
+                }
+            }
+        }
+
+        .price {
+            display: flex;
+            flex-direction: row;
+        }
+
+        // блок ціни
+        .price-block {
+            margin: 20px 0;
+
+            p {
+                font-size: 56px;
+                font-weight: 700;
+                color: #222;
+
+                .old-price {
+                    font-size: 32px;
+                    font-weight: 500;
+                    color: #888;
+                    text-decoration: line-through;
+                    margin-left: 10px;
+                }
+
+                @media (max-width: 480px) {
+                    font-size: 40px;
+
+                    .old-price {
+                        font-size: 28px;
+                    }
+                }
+            }
+        }
+
+        .discount {
+            background: #f97316;
+            color: #fff;
+            font-weight: 600;
+            padding: 6px 20px;
+            border-radius: 6px;
+            font-size: 20px;
+            max-height: 40px;
+            margin-left: 16px;
+        }
+
+        .order {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .order {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        // лічильник кількості
+        .counter {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+
+            button {
+                width: 58px;
+                height: 58px;
+                border: 1px solid #ccc;
+                background: #fff;
+                cursor: pointer;
+                border-radius: 6px;
+                font-size: 18px;
+                line-height: 1;
+                font-weight: 600;
+                transition: 0.2s ease;
+
+                &:hover {
+                    background: #f0f0f0;
+                }
+            }
+
+            span {
+                font-size: 18px;
+                min-width: 30px;
+                text-align: center;
+            }
+        }
+
+        // кнопка "Add to cart"
+        .add-btn {
+            width: 100%;
+            background: #92a134;
+            color: #fff;
+            border: none;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 25px;
+            transition: 0.2s ease;
+
+            &:hover {
+                background: #7c8d2b;
+            }
+        }
+
+        // опис товару
+        .description {
+            p {
+                font-size: 16px;
+                color: #444;
+                line-height: 1.5;
+                margin-bottom: 8px;
+                font-weight: 400;
+
+                @media (max-width: 480px) {
+                    font-size: 14px;
+                }
+            }
+
+            .read-more {
+                background: none;
+                border: none;
+                color: #424436;
+                text-decoration: underline;
+                font-weight: 500;
+                cursor: pointer;
+                padding: 0;
+                transition: 0.2s ease;
+            }
+        }
+    }
+
+    .lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6); // затемнение заднего фона
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .lightbox-image {
+        max-width: 50%;
+        max-height: auto;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+}

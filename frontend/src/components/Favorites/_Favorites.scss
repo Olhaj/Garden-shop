@@ -1,0 +1,218 @@
+@use '../../styles/_mixin.scss' as mixin;
+
+.favorites {
+    padding: 80px 40px;
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        h2 {
+            font-size: 64px;
+            font-weight: 700;
+            color: #282828;
+            margin: 0;
+        }
+
+        .favorites__filters {
+            display: flex;
+            align-items: left;
+            gap: 16px;
+
+            .filter {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                label {
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: #424436;
+                }
+
+                input,
+                select {
+                    padding: 6px 10px;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    font-size: 14px;
+                    width: 112px;
+                }
+            }
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 32px;
+        width: 100%;
+    }
+
+    &__card {
+        position: relative;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #ddd;
+        transition: transform 0.2s;
+        display: flex;
+        flex-direction: column;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+        }
+
+        img {
+            width: 100%;
+            height: 284px;
+            object-fit: contain;
+            background: #fff;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin: 20px;
+            color: #424436;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .favorites__price {
+            font-size: 40px;
+            font-weight: 600;
+            margin: 0 10px 14px;
+            color: #424436;
+            margin-left: 20px;
+
+            span {
+                font-size: 20px;
+                font-weight: 500;
+                color: #8b8b8b;
+                margin-left: 16px;
+                text-decoration: line-through;
+            }
+        }
+    }
+
+    &__discount {
+        position: absolute;
+        top: 20px;
+        left: 25px;
+        background: #f26d22;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        padding: 4px 8px;
+        border-radius: 4px;
+    }
+
+    &__icons {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .icon {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+
+            svg {
+                width: 48px;
+                height: 48px;
+                stroke: #444;
+                transition: all 0.3s ease;
+            }
+
+            &:hover {
+                background: #f8f8f8;
+                border-color: #999;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+            }
+
+            &.heart:hover svg {
+                stroke: #92a134;
+                fill: #92a134;
+            }
+
+            &.bag:hover svg {
+                stroke: #ff6f00;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .favorites {
+        padding: 40px 20px;
+
+        &__header {
+            h2 {
+                font-size: 40px;
+            }
+
+            .favorites__filters {
+                flex-wrap: wrap;
+            }
+
+            .favorites__filters .filter:nth-child(3) {
+                flex-basis: 100%; // третий занимает всю строку
+            }
+        }
+
+        &__card {
+            img {
+                height: 220px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            .favorites__price {
+                font-size: 36px;
+                margin-left: 20px;
+
+                span {
+                    font-size: 18px;
+                    margin-left: 12px;
+                }
+            }
+        }
+
+        &__discount {
+            font-size: 18px;
+            padding: 4px 8px;
+        }
+
+        &__icons {
+            .icon {
+                width: 36px;
+                height: 36px;
+
+                svg {
+                    width: 36px;
+                    height: 36px;
+                }
+            }
+        }
+    }
+}
