@@ -1,12 +1,12 @@
-import React from 'react'
-import DiscountForm from '@components/DiscountForm/DiscountForm'
+import React from "react";
+import DiscountForm from "@components/DiscountForm/DiscountForm";
 
 const HomePage = () => {
   return (
     <div>
-        <DiscountForm />
+      <DiscountForm />
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

@@ -1,0 +1,270 @@
+.sales {
+  padding: 80px 40px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 64px;
+      font-weight: 700;
+      color: #3b3b1f;
+      margin: 0;
+
+      &:hover {
+        color: var(--accent);
+      }
+
+      body.light & {
+        color: #424436;
+      }
+
+      body.dark & {
+        color: #ffffff;
+      }
+    }
+
+    .line{
+        border: none;
+        height: 1px;
+        background-color: #DDDDDD;
+        flex-grow: 1;
+        margin-left: 20px;
+
+        body.dark &{
+            background-color: #8B8B8B;
+        }
+    }
+
+    .sale__all {
+      font-size: 16px;
+      font-weight: 500;
+      color: #8b8b8b;
+      background: #FFFFF1;
+      border: 1px solid #DDDDDD;
+      border-radius: 5px;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #FFFFF1;
+        border-color: #ddd;
+      }
+
+      body.light & {
+        color: #424436;
+      }
+
+      body.dark & {
+        color: #8b8b8b;
+        background: #424436;
+        border-color: #8B8B8B;
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px;
+    width: 100%;
+  }
+
+  &__card {
+    position: relative;
+    background: #FFFFF1;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+
+         body.light & {
+             color: #424436;
+         }
+    
+         body.dark & {
+             color: #ffffff;
+             background: #424436;
+             border-color: #8B8B8B;
+         }
+
+    img {
+      width: 100%;
+      height: 90%;
+      object-fit: contain;
+      background: #fff;
+
+    body.light & {
+            color: #424436;
+        }
+    
+        body.dark & {
+            color: #ffffff;
+            background: #424436;
+        }
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 500;
+      margin: 20px;
+      color: #424436;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    
+        body.light & {
+            color: #424436;
+        }
+    
+        body.dark & {
+            color: #ffffff;
+            background: #424436;
+        }
+    }
+
+    .sales__price {
+      font-size: 40px;
+      font-weight: 600;
+      margin: 0 10px 14px;
+      color: #424436;
+      margin-left: 20px;
+
+      span {
+        font-size: 20px;
+        font-weight: 500;
+        color: #8b8b8b;
+        margin-left: 16px;
+        text-decoration: line-through;
+      }
+          body.light & {
+              color: #424436;
+          }
+    
+          body.dark & {
+              color: #ffffff;
+              background: #424436;
+          }
+    }
+  }
+
+  &__discount {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    background: #f26d22;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  &__icons {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .icon {
+      background: #00000000;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s ease;
+
+      svg {
+        width: 48px;
+        height: 48px;
+        stroke: black;
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        background: #00000000;
+        border-color: black;
+      }
+
+      &.heart:hover svg {
+        stroke: #92a134;
+        fill: #92a134;
+      }
+
+      &.bag:hover svg {
+        stroke: #ff6f00;
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sales {
+    padding: 40px 20px;
+
+    &__header {
+      h2 {
+        font-size: 40px;
+      }
+
+      .sales__all {
+        font-size: 14px;
+      }
+    }
+
+    &__card {
+      img {
+        height: 220px;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+
+      .sales__price {
+        font-size: 36px;
+        margin-left: 20px;
+
+        span {
+          font-size: 18px;
+          margin-left: 12px;
+        }
+      }
+    }
+
+    &__discount {
+      font-size: 18px;
+      padding: 4px 8px;
+    }
+
+    &__icons {
+      .icon {
+        width: 36px;
+        height: 36px;
+
+        svg {
+          width: 36px;
+          height: 36px;
+        }
+      }
+    }
+  }
+}
